@@ -64,6 +64,14 @@ class RubicsCubeInstance:
         self.faces['D'][0:9:3] = self.faces['B'][8::-3]
         self.faces['B'][8::-3] = keep
 
+    def move_R(self):
+        self.internal_rotate_face('R')
+        keep = self.faces['U'][2:9:3]
+        self.faces['U'][2:9:3] = self.faces['B'][0:9:3]
+        self.faces['B'][0:9:3] = self.faces['D'][8::-3]
+        self.faces['D'][8::-3] = self.faces['F'][8::-3]
+        self.faces['F'][8::-3] = keep
+
     def print_row_no_newline(self, face, row):
         for i in range(3):
             print(self.faces[face][3*row + i] + ' ', end='')
@@ -87,11 +95,11 @@ class RubicsCubeInstance:
 cube = RubicsCubeInstance()
 #cube.faces['U'][0] = 'GG'
 cube.print_cube()
-cube.move_L()
+cube.move_R()
 cube.print_cube()
-cube.move_L()
+cube.move_R()
 cube.print_cube()
-cube.move_L()
+cube.move_R()
 cube.print_cube()
-cube.move_L()
+cube.move_R()
 cube.print_cube()
