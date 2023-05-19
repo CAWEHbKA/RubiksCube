@@ -19,7 +19,7 @@ class RubicsCubeInstance:
         #self.faces['R'] = ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
         #self.faces['B'] = ['G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G']
         #self.faces['D'] = ['Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y']
-
+    
         self.faces['U'] = ['W0', 'W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8']
         self.faces['L'] = ['R0', 'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R8']
         self.faces['F'] = ['B0', 'B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8']
