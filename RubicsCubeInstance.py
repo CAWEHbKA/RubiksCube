@@ -127,6 +127,21 @@ class RubicsCubeInstance:
         self.faces['D'][8::-3] = self.faces['F'][8::-3]
         self.faces['F'][8::-3] = keep
 
+    def move_B(self):
+        self.internal_rotate_face('B')
+        keep = self.faces['U'][2::-1]
+        self.faces['U'][2::-1] = self.faces['L'][0:9:3]
+        self.faces['L'][0:9:3] = self.faces['D'][6:9:1]
+        self.faces['D'][6:9:1] = self.faces['R'][8::-3]
+        self.faces['R'][8::-3] = keep
+
+    def move_D(self):
+        self.internal_rotate_face('D')
+        keep = self.faces['F'][6:9:1]
+        self.faces['F'][6:9:1] = self.faces['R'][6:9:1]
+        self.faces['R'][6:9:1] = self.faces['B'][6:9:1]
+        self.faces['B'][6:9:1] = self.faces['L'][6:9:1]
+        self.faces['L'][6:9:1] = keep
     def print_row_no_newline(self, face, row):
         for i in range(3):
             print(self.faces[face][3*row + i] + ' ', end='')
@@ -152,15 +167,15 @@ cube = RubicsCubeInstance()
 
 cube.check_neighbours()
 cube.print_cube()
-cube.move_F()
+cube.move_D()
 cube.check_neighbours()
 cube.print_cube()
-cube.move_F()
+cube.move_D()
 cube.check_neighbours()
 cube.print_cube()
-cube.move_F()
+cube.move_D()
 cube.check_neighbours()
 cube.print_cube()
-cube.move_F()
+cube.move_D()
 cube.check_neighbours()
 cube.print_cube()
